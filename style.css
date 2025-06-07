@@ -1,0 +1,352 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    background-color: black;
+    color: white; /* Default text color for the body */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    width: 100%;
+    background-color: black; /* Consistent with body */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Adjusted shadow for dark background */
+    position: fixed; /* Keep nav at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.navcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limit nav width for larger screens */
+    margin: 0 auto; /* Center the nav content */
+    padding: 0 20px;
+}
+
+.name, .info, .button { /* Combined selector */
+    display: flex;
+    align-items: center; /* Vertically align items in these flex containers */
+}
+
+.name li, .info li, .button li { /* Targeting specific list items */
+    list-style: none; /* Removes bullet points */
+    margin: 0 30px; /* Your desired margin */
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.name {
+    justify-content: flex-start;
+    text-transform: uppercase;
+}
+
+.name li {
+    color: white;
+    font-size: 1.8em;
+}
+
+.info {
+    justify-content: center;
+}
+
+.info li:hover {
+    transform: scale(1.1);
+}
+
+.button {
+    justify-content: flex-end;
+}
+
+/* Link styles */
+nav a { /* Targeting links specifically within the nav */
+    text-decoration: none;
+    color: white;
+    transition: text-shadow 0.3s, text-decoration 0.3s, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover {
+    color: white; /* Stays white as per your original */
+    text-decoration: underline;
+    text-decoration-color: #39FF14;
+    text-underline-offset: 6px;
+    text-shadow: 0 0 12px #39FF14, 0 0 24px #39FF14;
+}
+
+/* Button styles */
+button {
+    background-color: #39FF14; /* Your neon green color */
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+    color: black; /* Text color */
+    padding: 10px 20px; /* Add padding for better button look */
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+    transform: scale(1.1); /* Slightly reduce scale for better feel */
+    box-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 80px #39FF14;
+}
+
+/* --- Main Portfolio Content Area (Hero Section) --- */
+.portfolio-main-content {
+    padding-top: 70px; /* Space for fixed navigation bar */
+    min-height: calc(100vh - 70px); /* Ensure it takes at least full viewport height minus nav height */
+    width: 75vw; /* Take 75% of the viewport width */
+    margin: 0 auto; /* Center the container horizontally */
+    display: flex; /* Make it a flex container to center its children */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.portfolio-main-content > .container-fluid { /* Target the direct Bootstrap container */
+    height: 100%; /* Ensure Bootstrap container takes full height of its parent */
+    display: flex; /* Make it flex to ensure row takes full height */
+    align-items: center; /* Center the row vertically if it doesn't take full height */
+}
+
+.portfolio-main-content .row {
+    height: 100%; /* Ensure the row takes full height of the container-fluid */
+    width: 100%; /* Ensure the row takes full width */
+    margin: 0; /* Reset default Bootstrap row margin */
+}
+
+/* Styles for the Left Content (Text) */
+.left-content-area {
+    padding: 20px; /* Add some padding around your text */
+    text-align: center; /* Your original flex-left had align-items: center, so text-align: center will center the text */
+}
+
+.left-content-area h3 , .left-content-area h4 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Your desired font */
+    color: white; /* Your desired color */
+    margin: 10px 0px;
+}
+
+.left-content-area h1 {
+    font-family: 'Comic Relief', cursive; /* Your special font */
+    font-size: 3.5em; /* Adjusted font size as needed */
+    color: white; 
+    /* text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;  */
+    line-height: 1.2;
+}
+
+/* --- Profile Picture Styling (Adjusted for Hero and About) --- */
+.profile-pic-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Take full width of its Bootstrap column */
+    height: 100%; /* Take full height of its Bootstrap column */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.profile-pic-container {
+    width: 75%; /* This container takes 75% of its parent (.profile-pic-wrapper's available width) */
+    max-width: 400px; /* Optional: Limit max size on very large screens for the image */
+    padding-bottom: 75%; /* Creates a square aspect ratio (same as width) */
+    position: relative; /* Needed for absolute positioning of the image */
+    overflow: hidden; /* Hide anything outside the container */
+    border-radius: 50%; /* Make it circular as per your original */
+    border: 5px solid #39FF14; /* Your neon green border */
+    box-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14; /* Enhanced neon shadow */
+    background-color: transparent; /* Ensure no white background shows */
+}
+
+.profile-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* The image takes 100% of its container */
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    display: block; /* Removes any extra space below the image */
+}
+
+/* --- About Me Section --- */
+.about-me-section {
+    padding: 50px 0;
+    background-color: #1a1a1a; /* Slightly different background for distinction */
+}
+
+.about-me-section .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-me-section{
+    padding: 20px;
+}
+
+.about-me-text {
+    padding: 20px;
+}
+
+.about-me-text h2 {
+    color: #39FF14; /* Neon green for section title */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-me-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify; /* Justify the text for a cleaner look */
+    color: white;
+}
+
+/* --- Skills Section --- */
+.skills-section {
+    padding: 50px 0;
+    background-color: #000;
+}
+
+.skills-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skills-section h2 {
+    color: #39FF14;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    padding: 0 20px; /* Padding for the grid itself */
+}
+
+.skills-grid div {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.skills-grid div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+}
+
+/* --- My Work Section (Coming Soon) --- */
+.works-section {
+    padding: 80px 0;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.works-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.works-section h2 {
+    color: #39FF14;
+    margin-bottom: 30px;
+}
+
+.coming-soon {
+    background-color: #222;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.coming-soon p {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #eee;
+}
+
+/* --- Get in Touch Section --- */
+.contact-section {
+    padding: 80px 0;
+    background-color: #000;
+    text-align: center;
+}
+
+.contact-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-section h2 {
+    color: #39FF14;
+    margin-bottom: 30px;
+}
+
+.contact-icons a {
+    font-size: 2em;
+    margin: 0 15px;
+    color: #39FF14;
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-icons a:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+    .portfolio-main-content {
+        width: 95vw; /* Make it slightly wider on smaller screens */
+        height: auto; /* Allow height to adjust */
+        padding-top: 90px; /* More space if nav is taller */
+        min-height: auto; /* Remove min-height on small screens if content stacks and exceeds viewport */
+    }
+
+    .portfolio-main-content .row,
+    .about-me-section .row {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        align-items: center; /* Center the stacked columns */
+    }
+
+    .col-md-6 {
+        width: 100%; /* Each column takes full width when stacked */
+    }
+
+    .left-content-area,
+    .profile-pic-wrapper,
+    .about-me-text {
+        margin-bottom: 30px; /* Add space between stacked sections */
+        padding: 10px; /* Adjust padding on small screens */
+    }
+
+    .left-content-area h1 {
+        font-size: 2.5em; /* Adjust font size for smaller screens */
+    }
+
+    .profile-pic-container {
+        width: 80%; /* Image slightly larger on smaller screens for visibility */
+        padding-bottom: 80%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust grid for small screens */
+    }
+}
