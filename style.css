@@ -76,20 +76,20 @@ nav a {
 nav a:hover {
     color: white; 
     text-decoration: underline;
-    text-decoration-color: #04B2D9;
+    text-decoration-color: #39FF14;
     text-underline-offset: 6px;
-    text-shadow: 0 0 12px #04B2D9, 0 0 24px #04B2D9;
+    text-shadow: 0 0 12px #39FF14, 0 0 24px #39FF14;
 }
 
 /* Button styles */
 button {
-    background-color: #04B2D9; 
+    background-color: #39FF14; 
     text-align: center;
     font-weight: bold;
     font-size: 15px;
     border: none;
     border-radius: 20px;
-    box-shadow: 0 0 5px #04B2D9, 0 0 10px #04B2D9, 0 0 20px #04B2D9;
+    box-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
     color: black; 
     padding: 10px 20px; 
     cursor: pointer;
@@ -98,7 +98,7 @@ button {
 
 button:hover {
     transform: scale(1.1); 
-    box-shadow: 0 0 20px #04B2D9, 0 0 40px #04B2D9, 0 0 80px #04B2D9;
+    box-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 80px #39FF14;
 }
 
 /* --- Main Portfolio Content Area (Hero Section) --- */
@@ -138,7 +138,7 @@ button:hover {
 
 .left-content-area h1 {
     font-size: 3.5em; 
-    color: #0F5FA6; 
+    color: #39FF14; 
     line-height: 1.2;
 }
 
@@ -159,8 +159,8 @@ button:hover {
     position: relative; 
     overflow: hidden; 
     border-radius: 50%; 
-    border: 5px solid #04B2D9; 
-    box-shadow: 0 0 20px #04B2D9, 0 0 40px #04B2D9; 
+    border: 5px solid #39FF14; 
+    box-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14; 
     background-color: transparent; 
 }
 
@@ -195,7 +195,7 @@ button:hover {
 }
 
 .about-me-text h2 {
-    color: #0F5FA6; 
+    color: #39FF14; 
     margin-bottom: 20px;
     text-align: center;
 }
@@ -221,7 +221,7 @@ button:hover {
 }
 
 .skills-section h2 {
-    color: #0F5FA6;
+    color: #39FF14;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -245,7 +245,7 @@ button:hover {
 
 .skills-grid div:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(20, 94, 255, 0.6);
+    box-shadow: 0 0 15px rgba(22, 255, 1, 0.6);
 }
 
 /* --- My Work Section (Coming Soon) --- */
@@ -262,7 +262,7 @@ button:hover {
 }
 
 .works-section h2 {
-    color: #0F5FA6;
+    color: #39FF14;
     margin-bottom: 30px;
 }
 
@@ -293,14 +293,14 @@ button:hover {
 }
 
 .contact-section h2 {
-    color: #0F5FA6;
+    color: #39FF14;
     margin-bottom: 30px;
 }
 
 .contact-icons a {
     font-size: 2em;
     margin: 0 15px;
-    color: #0F5FA6;
+    color: #39FF14;
     transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
