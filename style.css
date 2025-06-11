@@ -311,17 +311,40 @@ button:hover {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 767.98px) {
+    nav {
+        display: none !important
+    }
+
+    .name li, .info li, .button li {
+        font-size: 1em; /* Smaller nav text */
+        margin: 0 10px;
+    }
+
     .portfolio-main-content {
-        width: 95vw; /* Make it slightly wider on smaller screens */
+        width: 100vw;
+        display: block;
         height: auto; /* Allow height to adjust */
-        padding-top: 90px; /* More space if nav is taller */
-        min-height: auto; /* Remove min-height on small screens if content stacks and exceeds viewport */
+        padding-top: 50px; /* More space if nav is taller */
+        min-height: unset; /* Remove min-height on small screens if content stacks and exceeds viewport */
     }
 
     .portfolio-main-content .row,
     .about-me-section .row {
         flex-direction: column; /* Stack columns vertically on small screens */
         align-items: center; /* Center the stacked columns */
+    }
+
+    .portfolio-main-content > .container-fluid {
+        display: block; /* Remove flex on container */
+        height: auto;
+    }
+
+    .portfolio-main-content .row {
+        height: auto;
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .col-md-6 {
@@ -336,7 +359,9 @@ button:hover {
     }
 
     .left-content-area h1 {
-        font-size: 2.5em; /* Adjust font size for smaller screens */
+        font-size: 1.3em; 
+        margin-top: 10px;
+        word-break: break-word;
     }
 
     .profile-pic-container {
@@ -344,7 +369,12 @@ button:hover {
         padding-bottom: 80%;
     }
 
+    .left-content-area h3, .left-content-area h4 {
+        font-size: 1em;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust grid for small screens */
     }
 }
+
